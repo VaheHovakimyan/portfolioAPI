@@ -8,13 +8,19 @@ import { MongoClient, ObjectId } from "mongodb";
 // app.use(express.static("../client/build"));
 
 // app.use(express.json());
-const dotenv = require("dotenv");
-dotenv.config();
 
-const client = new MongoClient(`${process.env.MONGODB}`);
+// const dotenv = require("dotenv");
+// dotenv.config();
+
+// const client = new MongoClient(`${process.env.MONGODB}`);
 
 
 (async function () {
+
+    const dotenv = require("dotenv");
+    dotenv.config();
+
+    const client = new MongoClient(`${process.env.MONGODB}`);
 
     await client.connect();
 
