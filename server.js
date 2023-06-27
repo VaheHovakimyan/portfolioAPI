@@ -8,6 +8,8 @@ import { MongoClient, ObjectId } from "mongodb";
 // app.use(express.static("../client/build"));
 
 // app.use(express.json());
+const dotenv = require("dotenv");
+dotenv.config();
 
 const client = new MongoClient(`${process.env.MONGODB}`);
 
@@ -16,11 +18,18 @@ const client = new MongoClient(`${process.env.MONGODB}`);
 
     await client.connect();
 
+    // const dotenv = require("dotenv");
+    const cors = require("cors");
+    
+
     const app = express();
 
     app.use(express.static("../client/build"));
 
     app.use(express.json());
+
+    // dotenv.config();
+    app.use(cors());
 
     const cleanup = (event) => {
         client.close();
@@ -37,6 +46,11 @@ const client = new MongoClient(`${process.env.MONGODB}`);
     //     res.send(data);
     // }
 
+     app.get("/", (req,res) => {
+        res.setHeader("Access-Control-Allow-Credentials", "true");
+        res.send("API is running ...");
+    })
+    
     // Home Data
 
     const Homedb = client.db("Home");
