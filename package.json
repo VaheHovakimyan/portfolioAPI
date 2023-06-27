@@ -4,7 +4,7 @@
   "description": "Vahe's portfolio",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --require dotenv/config server.js"
+    "dev": "node server.js"
   },
   "author": "Vahe Hovakimyan",
   "license": "ISC",
