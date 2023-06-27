@@ -1,0 +1,15 @@
+[
+    [
+        {
+            "name": "FrontEnd"
+        },
+        {
+            "id": 6,
+            "name": "Next.js",
+            "img": "https://i.ibb.co/5BnfKZY/home-js-icon.png",
+            "alt": "next_icon",
+            "percentage": 68,
+            "backgroundColor": "rgb(70, 70, 70)"            
+        }
+    ]
+]
