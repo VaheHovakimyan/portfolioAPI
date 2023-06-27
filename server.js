@@ -52,9 +52,9 @@ import { MongoClient, ObjectId } from "mongodb";
     //     res.send(data);
     // }
 
-     app.get("/", (req,res) => {
-        res.setHeader("Access-Control-Allow-Credentials", "true");
-        res.send("API is running ...");
+     app.get("/", async (req,res) => {
+        await res.setHeader("Access-Control-Allow-Credentials", "true");
+        await res.send("API is running ...");
     })
     
     // Home Data
